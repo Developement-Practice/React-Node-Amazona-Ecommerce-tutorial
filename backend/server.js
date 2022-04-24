@@ -1,8 +1,10 @@
 import express from "express";
 import data from "./Data.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
-
 
 app.get('/api/products/:id', (req, res) => {
 
@@ -26,7 +28,7 @@ app.get('/', (req, res) => {
     res.send("Server is ready");
 })
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000; // this is working
 app.listen(port, () => {
     console.log(`Server is at http://localhost:${port}`);
 });
